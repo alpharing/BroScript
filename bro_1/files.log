@@ -1,0 +1,33 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2018-07-25-17-22-45
+#fields	ts	fuid	tx_hosts	rx_hosts	conn_uids	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted
+#types	time	string	set[addr]	set[addr]	set[string]	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string
+1491982702.700962	F1nyezj7iXlPf6yQ7	192.168.145.130	192.168.145.128	Cbqfjr2HRq9PIMZTSa	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982703.120786	FsnxH12wFvusGOsz1	192.168.145.130	192.168.145.128	Cj7AcF3Rri8zlhuoCj	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982703.121004	F3DIKk3oTOf3O4g1Rh	192.168.145.130	192.168.145.128	CfsCqm3YEXrLdFKljd	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982703.121139	FzrfbW3nmkwt989Npc	192.168.145.130	192.168.145.128	C9XQtmmd4pIFxVYA7	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982703.867297	Fgdhm83ACDbcyh52j7	192.168.145.130	192.168.145.128	CLN5tJ1sWPeIKcF0O9	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982704.075399	FDLFNo4wtcXYiGrCV9	192.168.145.130	192.168.145.128	CR2Rvh1Jfrrd9bYo99	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982704.603014	FaiXKI3bHqsG06QXM1	192.168.145.130	192.168.145.128	C4kwGJ1ewbvxRr8kO9	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982705.691098	Fp8niD2crkVGVZ1mK9	192.168.145.130	192.168.145.128	CyBlfYD1EokHza8ic	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982706.619155	FcMmFa4oUDFxt8c9jl	192.168.145.130	192.168.145.128	CALQAP27FHIb2pOJ0f	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982706.683144	FuA0rr1xfne7UlebJ6	192.168.145.130	192.168.145.128	CQKsUc3Axvf2IvuXib	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982707.835409	FOZRPn3VBbNiEHdH2	192.168.145.130	192.168.145.128	CPWORP2OYjWirwaeYh	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982708.859508	Fq9rz4GdYemMJ2eqh	192.168.145.130	192.168.145.128	C9mlaE4eQWpuf77nx	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982709.690973	FCqrNT1Ed4oVxKy3Ad	192.168.145.130	192.168.145.128	CdmdGq3NlbaYbvg0a8	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982711.707240	FFck5c1ex75m688Rq4	192.168.145.130	192.168.145.128	C3Khd72v0Z2Fs2ITO4	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982711.803185	FAETVlabup27I2bW2	192.168.145.130	192.168.145.128	Cb6Nd91cpQ372U7By1	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982712.827362	FarsfK2McwwOjfbnha	192.168.145.130	192.168.145.128	C1uPSL1QmmgZXozny6	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982713.690969	FLYSQe4QFWPpzfkNab	192.168.145.130	192.168.145.128	Cxjhkh4f8xSYxnBDVg	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982715.835226	Fp5XCe14Ce2ObzQ5Ia	192.168.145.130	192.168.145.128	CE6Sr824k2Ai59TGp5	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982716.859470	F9NM2t4fgjnfgYZ2hf	192.168.145.130	192.168.145.128	CXmXZE2NF9spLYCjig	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982719.867151	FnZ3v1YvPtrQ5u2sj	192.168.145.130	192.168.145.128	Ct15i729EdRvtgIxO4	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982721.851340	F9OzVrKkK6BfOTN2f	192.168.145.130	192.168.145.128	CnZ42C2zHw7jVCqcVd	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982723.835094	FbZ0oM1ClEH10wGiO1	192.168.145.130	192.168.145.128	CyGGnE4LjSmZtP8lEf	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982726.843408	Fn39kC4ZVDLDSA4pPb	192.168.145.130	192.168.145.128	CBck5QN7BArKqD6N8	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+1491982727.867029	FP3suOa0AINd8ntx9	192.168.145.130	192.168.145.128	CC6QEy1VWqnTud1hwk	HTTP	0	(empty)	text/html	-	0.000000	-	F	312	312	0	0	F	-	-	-	-	-
+#close	2018-07-25-17-22-45
