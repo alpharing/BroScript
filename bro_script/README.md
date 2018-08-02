@@ -9,4 +9,4 @@ Execution Environment : Security-Onion 16.04.4.2 and Ubuntu 16.4 with bro 2.5.4 
 Contact : cys5322@gmail.com
 
 # 0.1 ver 
-Detection Signature is now supportted CCattack and Torrent
+Detection Signature is now supported CCattack and Torrent
