@@ -3,7 +3,8 @@ module ProtoSig;
 export {
 	redef enum Notice::Type += {
 		BitTorrent,
-		CCattack
+		DDos,
+		Malware
 	};
 
 	redef record connection += {
@@ -29,12 +30,20 @@ function ProtoSig::match(state: signature_state, data: string): bool
             		$identifier=fmt("%s%s", state$conn$id$orig_h, state$conn$id$resp_h)]);
 	}
 
-	if ( /ccattack/ in state$sig_id ) {
+	if ( /ccattack2/ in state$sig_id ) {
 		print("ccattack founded");
-		NOTICE([$note=ProtoSig::Malware, $msg="CCattack founded",
+		NOTICE([$note=ProtoSig::DDos, $msg="CCattack founded",
+            		$conn=state$conn,
+            		$identifier=fmt("%s%s", state$conn$id$orig_h, state$conn$id$resp_h)]);
+	}
+
+	if ( /fiestaSWF2/ in state$sig_id ) {
+		print("EK_fiesta_swf founded");
+		NOTICE([$note=ProtoSig::Malware, $msg="EK_fiesta_swf founded",
             		$conn=state$conn, 
             		$identifier=fmt("%s%s", state$conn$id$orig_h, state$conn$id$resp_h)]);
 	}
+
 
 	# We just always return false because we're done.  We don't
 	# actually want the signature match to happen.
