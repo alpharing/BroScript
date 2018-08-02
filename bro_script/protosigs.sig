@@ -28,7 +28,7 @@ signature protosig_bittorrent {
 
 signature protosig_ccattack {
     ip-proto == tcp
-    payload /(|.*[\r\n])Cache-Control: no-store, no-cache/
+    payload /(|.*[\r\n])Cache-Control: [nm][ou][-s][sct][ta-][ocr][rhe]/
     tcp-state responder 
     eval ProtoSig::match
 }
