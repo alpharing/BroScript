@@ -9,7 +9,7 @@ Execution Environment : python 3.7.0 with pycharm community ver. <br/>
 Contact : cys5322@gmail.com
 
 # 0.1 ver 
-Add main.py + AutopPy.py
+Add main.py + autopPy.py
 
 ## Reference
 Brothon(bat)
