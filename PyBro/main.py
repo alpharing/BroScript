@@ -1,4 +1,4 @@
-import AutoPy
+import autoPy
 import pickle
 import sys
 
@@ -41,7 +41,7 @@ def make_proto():
             if code == 2:
                 break
             elif code == 1:
-                newClass = AutoPy.proto_sig()
+                newClass = autoPy.proto_sig()
                 newClass.make_sig()
                 newClass.print_sig()
                 list_sig.append(newClass)
@@ -100,14 +100,15 @@ def show_proto(list_sig):
 if __name__ == '__main__':
 
     # test field
-    a = AutoPy.proto_sig('hi')
-    b = AutoPy.proto_sig('by')
-    c = AutoPy.proto_sig('u')
+    a = autoPy.proto_sig('hi')
+    b = autoPy.proto_sig('by')
+    c = autoPy.proto_sig('u')
 
     null_list = []
     null_list.append(a)
     null_list.append(b)
     null_list.append(c)
+    make_file(null_list)
 
     null_list = append_proto(null_list)
     show_proto(null_list)
