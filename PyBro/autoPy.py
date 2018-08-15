@@ -46,11 +46,11 @@ class proto_sig:
         try:
 
             # name
-            text = input('signature의 이름을 입력해주세요 : ')
+            text = input('Put your signature name : ')
             self.name = text
 
             # ip proto
-            text = input('UDP 페이로드 or TCP 페이로드 : ')
+            text = input('UDP payload or TCP payload : ')
 
             if text in t_ip_proto_table:
                 self.ip_proto = 'tcp'
@@ -58,12 +58,12 @@ class proto_sig:
                 self.ip_proto = 'udp'
             else:
                 self.ip_proto = 'tcp'
-                raise MyError("Example : udp, tcp, u, t (udp / tcp 두 개만 호환됩니다)")
+                raise MyError("Example : udp, tcp, u, t (udp / tcp - Only two are compatible)")
 
             # payload
             while(1):
-                print("페이로드는 다중 입력 가능합니다(종료 : 1 입력)")
-                text = input('페이로드를 flex reg-exp 방식으로 쓰시오 : ')
+                print("You can enter multiple payloads. (exit : Input 1)")
+                text = input('Write the payload in flex reg-exp : ')
 
                 if text == '1':
                     break
