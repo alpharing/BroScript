@@ -55,11 +55,81 @@ def make_proto():
     except BaseException as e:
         print(e)
 
+# Load your .sig File
+def load_sigFile():
+    try:
+        # Temporary List
+        list_temp = []
+        list_file = []
+        list_sig = []
+        jump_cnt = 0
+
+        # Loading original .sif File
+        with open('protosig.sig', 'r') as f:
+            list_temp = f.readlines()
+
+        # Featuring Data
+        for i in list_temp:
+            i = i.replace('\t', '')
+            list_file.append(i.replace('\n', ''))
+
+        i = 0
+
+        while(i < len(list_file)):
+
+            i += jump_cnt
+            jump_cnt = 0
+
+            if list_file[i].count('{') == 1:
+                # Temporary Signature Class
+                temp_sig = autoPy.proto_sig()
+
+                list_temp = list_file[i].split(' ')
+                temp_sig.name = list_temp[1][9:]
+                jump_cnt += 1
+
+                if list_file[i+1].count('ip-proto'):
+                    list_temp = list_file[i+1].split(' ')
+                    temp_sig.ip_proto = list_temp[2]
+                    jump_cnt += 1
+
+                # Suppose Max_Payload value is 3
+                for j in range(i+2, len(list_file)-1):
+
+                    if list_file[j] == '}':
+                        break
+
+                    if list_file[j].count('/') >= 2:
+
+                        if list_file[j] == '}':
+                            break
+
+                        list_temp = list_file[j].split('payload')
+                        temp_sig.payload.append(list_temp[1])
+                        jump_cnt += 1
+
+                if list_file[i+jump_cnt].count('tcp-state') == 1:
+                    list_temp = list_file[i+jump_cnt].split('tcp-state')
+                    temp_sig.tcp_state = list_temp[1].lstrip()
+                    jump_cnt += 4
+
+            list_sig.append(temp_sig)
+            show_proto(list_sig)
+            print(i)
+        # end Featuring Data
+
+        return list_sig
+
+    except BaseException as e:
+        pass
+
+
+
 # Append original signature
 def append_proto(list_sig):
     try:
 
-        # Loading original signature file
+        # Loading original signature Dump file
         with open('save.sig', 'rb') as f:
             list_orig = pickle.load(f)
 
@@ -99,6 +169,7 @@ def show_proto(list_sig):
 
 if __name__ == '__main__':
 
+    '''
     # test field
     a = autoPy.proto_sig('hi')
     b = autoPy.proto_sig('by')
@@ -112,3 +183,6 @@ if __name__ == '__main__':
 
     null_list = append_proto(null_list)
     show_proto(null_list)
+    '''
+    null_list = []
+    null_list = load_sigFile()
