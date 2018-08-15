@@ -2,7 +2,8 @@ This is PyBro
 =========================================================
 This program consists of a python code
 
-It is just make .sig file what is used to execute Bro-IDS
+It is just make .sig file what is used to execute Bro-IDS <br/>
+Also, it goes well with Bro Signature-IDS in this repository
 
 Execution Environment : python 3.7.0 with pycharm community ver. <br/>
 
