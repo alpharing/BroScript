@@ -58,7 +58,7 @@ class proto_sig:
                 self.ip_proto = 'udp'
             else:
                 self.ip_proto = 'tcp'
-                raise MyError("입력 예시 : udp, tcp, u, t (udp / tcp 두 개만 호환됩니다)")
+                raise MyError("Example : udp, tcp, u, t (udp / tcp 두 개만 호환됩니다)")
 
             # payload
             while(1):
@@ -80,7 +80,7 @@ class proto_sig:
                 self.tcp_state = 'responder'
             else:
                 self.tcp_state = 'originator'
-                raise MyError("입력 예시 : orig, originator, responder, resp, r")
+                raise MyError("Example : orig, originator, responder, resp, r")
 
 
         except BaseException as e:
@@ -93,31 +93,3 @@ class proto_sig:
             print("payload /" + i + "/")
         print("tcp-state " + self.tcp_state)
         print(self.eval)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
