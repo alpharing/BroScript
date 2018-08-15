@@ -6,8 +6,8 @@ import sys
 def make_file(list_sig):
     try:
 
-        # 파일 생성
-        with open('protosig.sig', 'w') as f:
+        # Create file
+        with open('protosigs.sig', 'w') as f:
             for sig in list_sig:
                 print("signature protosig_" + sig.name + " {", file=f)
                 print("\tip-proto == " + sig.ip_proto, file=f)
@@ -17,7 +17,7 @@ def make_file(list_sig):
                 print("\t" + sig.eval, file=f)
                 print("}\n", file=f)
 
-        # 덤프 파일 만들기
+        # Make dump file
         with open('save.sig', 'wb') as f:
             pickle.dump(list_sig, f)
 
@@ -33,8 +33,8 @@ def make_proto():
         while(1):
             code = 0
 
-            print("1. signature 생성")
-            print("2. 종료")
+            print("1. signature create")
+            print("2. exit")
 
             code = int(input())
 
@@ -46,7 +46,7 @@ def make_proto():
                 newClass.print_sig()
                 list_sig.append(newClass)
             else:
-                print("1 or 2 만 입력하세요")
+                print("Please Put in 1 or 2 ")
                 continue
 
         return list_sig
@@ -65,7 +65,7 @@ def load_sigFile():
         jump_cnt = 0
 
         # Loading original .sif File
-        with open('protosig.sig', 'r') as f:
+        with open('protosigs.sig', 'r') as f:
             list_temp = f.readlines()
 
         # Featuring Data
@@ -146,8 +146,8 @@ def delete_proto(list_sig):
     show_proto(list_sig)
     index = -1
 
-    print("\n\n이름 : protosig_<이 부분>")
-    text = input("삭제하고 싶은 시그니쳐의 이름을 입력하세요 : ")
+    print("\n\n이름 : protosig_<this part>")
+    text = input("Enter the name of the signature you want to delete : ")
 
     for sig in list_sig:
         index += 1
@@ -156,13 +156,13 @@ def delete_proto(list_sig):
 
     list_sig.pop(index)
 
-    print("\n\n[삭제 한 후 보유하고 있는 시그니쳐 이름]")
+    print("\n\n[Your Signature After deleting]")
     show_proto(list_sig)
 
 # Show Signature
 def show_proto(list_sig):
 
-    print("[보유하고 있는 시그니쳐 이름]")
+    print("[Your Signature]")
 
     for sig in list_sig:
         print("signature protosig_" + sig.name)
