@@ -9,7 +9,7 @@ Execution Environment : python 3.7.0 with pycharm community ver. <br/>
 
 Contact : cys5322@gmail.com
 
-# 0.1 ver 
+0.1 ver log <br/>
 Add main.py + autopPy.py <br/>
 main.py : program main <br/>
 autoPy.py : making signature class
