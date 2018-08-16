@@ -204,7 +204,7 @@ def delete_proto(list_sig):
     show_proto(list_sig)
     index = -1
 
-    print("\n\n이름 : protosig_<this part>")
+    print("\n\nname : protosig_<this part>")
     text = input("Enter the name of the signature you want to delete : ")
 
     for sig in list_sig:
