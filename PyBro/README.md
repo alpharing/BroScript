@@ -16,7 +16,7 @@ autoPy.py : making signature class
 
 # 0.2 ver alpha
 Add vtForensic.py <br/>
-vtForensic.py : file hashcode -> virus total query (need vt api key) <br/> - NOT COMPLETED
+vtForensic.py : file hashcode -> virus total query (need vt api key) - NOT COMPLETED 
 
 ## Reference
 Brothon(bat)
