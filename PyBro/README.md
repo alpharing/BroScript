@@ -10,7 +10,13 @@ Execution Environment : python 3.7.0 with pycharm community ver. <br/>
 Contact : cys5322@gmail.com
 
 # 0.1 ver 
-Add main.py + autopPy.py
+Add main.py + autopPy.py <br/>
+main.py : program main <br/>
+autoPy.py : making signature class
+
+# 0.2 ver alpha
+Add vtForensic.py <br/>
+vtForensic.py : file hashcode -> virus total query (need vt api key) <br/>
 
 ## Reference
 Brothon(bat)
