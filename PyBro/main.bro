@@ -24,7 +24,6 @@ function ProtoSig::match(state: signature_state, data: string): bool
 	state$conn$protosig = proto;
 
     # Start of Notice
-
 	if ( /ccattack/ in state$sig_id ) {
 		print("ccattack founded");
 		NOTICE([$note=ProtoSig::Malware, $msg="ccattack founded",
