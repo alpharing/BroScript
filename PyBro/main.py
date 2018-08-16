@@ -2,6 +2,70 @@ import autoPy
 import pickle
 import sys
 
+def sig2notice(list_sig):
+    try:
+        list_temp = []
+        list_file = []
+
+        list_before = []
+        list_after = []
+        list_middle = []
+
+        list_addSig = []
+
+        parse_Scnt = 0
+        parse_Ecnt = 0
+
+        with open('main.bro', 'r') as f:
+            list_temp = f.readlines()
+
+        show_proto(list_sig)
+
+        # Find Parse count
+        for i in range(0, len(list_temp)):
+            if list_temp[i].count("End of Notice"):
+                parse_Ecnt = i
+
+        for i in range(0, len(list_temp)):
+            if list_temp[i].count("Start of Notice"):
+                parse_Scnt = i
+
+        # Parsing
+        for i in range(0, parse_Scnt):
+            list_before.append(list_temp[i])
+
+        for i in range(parse_Scnt, parse_Ecnt):
+            list_middle.append(list_temp[i])
+
+        for i in range(parse_Ecnt, len(list_temp)):
+            list_after.append(list_temp[i])
+
+        # Reset Notice Part
+        print(list_middle)
+        list_middle[1:] = []
+        print(list_middle)
+
+        # Making Notice Part
+        for i in list_sig:
+            list_addSig.append('\n')
+            list_addSig.append('\tif ( /' + i.name + '/ in state$sig_id ) {\n')
+            list_addSig.append('\t\tprint("' + i.name + ' founded");\n')
+            list_addSig.append('\t\tNOTICE([$note=ProtoSig::Malware, $msg="' + i.name + ' founded",\n')
+            list_addSig.append('            \t\t$conn=state$conn, \n')
+            list_addSig.append('            \t\t$identifier=fmt("%s%s", '
+                               'state$conn$id$orig_h, state$conn$id$resp_h)]);\n')
+            list_addSig.append('\t}\n')
+
+        list_before.extend(list_middle)
+        list_before.extend(list_addSig)
+        list_before.extend(list_after)
+
+        with open('main.bro', 'w') as f:
+            f.writelines(list_before)
+
+    except BaseException as e:
+        print(e)
+
 # .sig file maker
 def make_file(list_sig):
     try:
@@ -114,16 +178,10 @@ def load_sigFile():
                     jump_cnt += 4
 
             list_sig.append(temp_sig)
-            show_proto(list_sig)
-            print(i)
         # end Featuring Data
 
-        return list_sig
-
     except BaseException as e:
-        pass
-
-
+        return list_sig
 
 # Append original signature
 def append_proto(list_sig):
@@ -184,5 +242,8 @@ if __name__ == '__main__':
     null_list = append_proto(null_list)
     show_proto(null_list)
     '''
+
     null_list = []
     null_list = load_sigFile()
+
+    sig2notice(null_list)
