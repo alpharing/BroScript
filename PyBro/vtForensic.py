@@ -1,23 +1,16 @@
 """Run a VirusTotal Query on Extracted File Hashes"""
-from __future__ import print_function
-
 import os
 import sys
-import argparse
 import requests
-
-from pprint import pprint
 
 # Local imports
 from brothon import bro_log_reader
-from brothon.utils import vt_query
-
 
 def checkVirus(Sha256):
 
     try:
 
-        params = {'apikey': 'PUT YOUR VT-API KEY',
+        params = {'apikey': 'PUT YOUR API KEY',
                   'resource': Sha256}
 
         headers = {
@@ -30,9 +23,13 @@ def checkVirus(Sha256):
 
         json_response = response.json(encoding='UTF8')
 
-        print(json_response['positives'])
-        print(str(json_response['total']))
-
+        # response_code = 0 -> could't find file
+        if json_response['response_code'] == 1:
+            print(str(json_response['positives']) + '/' + str(json_response['total']))
+            print('more')
+            print(json_response['permalink'])
+        else:
+            print('This file cannot be verified')
 
     except BaseException as e:
         print(e)
@@ -40,12 +37,19 @@ def checkVirus(Sha256):
 if __name__ == '__main__':
     """Run a VirusTotal Query on Extracted File Hashes"""
 
+    index = 1
 
     try:
         # Run the bro reader on a given log file
         reader = bro_log_reader.BroLogReader('files.log')
 
+        print('Examination result (positives / total number of vaccines)')
+
+		# Use Sha1 hash algorithm
         for row in reader.readrows():
+            print(index)
+            index += 1
+
             if(row['sha1'] != '-'):
                 checkVirus(row['sha1'])
 
